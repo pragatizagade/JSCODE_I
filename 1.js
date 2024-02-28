@@ -1,47 +1,24 @@
-//Q = second max of four numbers 
+// Write a program to take N numbers from a user as input and store them in an array and then take another number from the user M, and delete the Mth element from the array. Print the final array.
 
-const input=require("readline-sync");
-let a=input.question("Enter A:"),b=input.question("Enter B:"), c=input.question("Enter C:"),d=input.question("Enter D:"),m1,m2,M1,M2,r;
-if(a<b)
+const a= require("readline-sync")
+let A=[];
+let N=a.question("Enter N:")
+let M=a.question("Enter the M:")
+for(let i=0;N>i;i++)
 {
-    m1=a;
-    M1=b
+        A[i]=a.question("Enter the element:")
 }
-else{
-    m1=b;
-     M1=a;
-}
-if(c<d)
+let z=0;
+for(i=0;N-1>i;i++)
 {
-    m2=c;
-    M2=d;
-}
-else
-{
-    m2=d;
-    M2=c;
-}
-if(m1>m2)
-{
-    if(m1>M2)
+    if(M==i||z==1)
     {
-        r=m1;
+        A[i]=A[i+1]
+        console.log(A[i])
+        z=1
     }
     else
     {
-        r=M2;
+        console.log(A[i])
     }
-
 }
-else
-{
-    if(m2>M1)
-    {
-        r=m2;
-    }
-    else
-    {
-        r=M1;
-    } 
-}
-console.log(r);

@@ -1,29 +1,12 @@
-// Q = check wheather it is palindrom number or not
-const z=require("readline-sync")
-let a=z.question("Enter:")
-let n=a.length,c=0;
-for(let i=0;(Math.floor(n/2))>i;i++)
+//Write a program to take N numbers from a user as input and then print the duplicates in those N numbers. Also, take N as an input from the user.
+
+
+const a= require("readline-sync")
+let N=a.questionInt("Enter N:")
+let A=[]
+for(let i=0;N>i;i++)
 {
-    if(a[i]===a[n-1-i])
-    {
-        c++;
-    }
-}
-if(c==Math.floor(n/2))
-{
-    console.log("palimdrom number")
-}
-else
-{
-    console.log("not palimdrom number")
+    A[i]=a.questionInt("Enter the Value:");
 }
 
-// by using function
-let b=a.split("").reverse().join("")
-if(a===b)
-{
-    console.log("palindrome number")
-}
-else{
-    console.log("not a palimdrom number")
-}
+

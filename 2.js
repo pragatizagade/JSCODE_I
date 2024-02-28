@@ -1,24 +1,18 @@
-
-// Q = greater of three number
-const input=require("readline-sync");
-let a=input.question("Enter:"),b=input.question("Enter:"),c=input.question("Enter:"),M,M1;
-if(a>b)
+// Write a program to take N numbers from a user as input and then take another number from the user M, and a number X from the user to be inserted at the Mth location in the array. Print the final array.
+const a= require("readline-sync")
+let N=a.question("Enter the N:")
+let M=a.question("Enter the M:")
+let X=a.question("Enter the X:")
+let A=[]
+for(let i=0;N>i;i++)
 {
-    M=a
+    A[i]=a.question("Enter the Element:")
+    if(M==i)
+    {
+        A[i]=X;
+    }
 }
-else{
-    M=b
-}
-if(M>c)
+for(let i=0;N>i;i++)
 {
-    M1=M;
+    console.log(A[i])
 }
-else
-{
-    M1=c;
-}
-console.log(M1)
-
-//by using function
-console.log(Math.max(a,b,c))
-

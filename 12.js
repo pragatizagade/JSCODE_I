@@ -1,44 +1,16 @@
-// third max in 4 numbers
+//Write a program to take value N from the user and print the following pattern based on the user input.
+//array = [2, 3, 5, 2, 1]
+//>>
+//>>>
+//>>>>>
+//>>
+//>
 
-const input=require("readline-sync");
-let a=input.question("Enter A:"),b=input.question("Enter B:"), c=input.question("Enter C:"),d=input.question("Enter D:"),m1,m2,M1,M2,r;
-if(a<b)
+const input=require("readline-sync")
+let N=input.questionInt("Enter the N:"),a,s=""
+for(let i=0;N>i;i++)
 {
-    m1=a;
-    M1=b
+    a=input.questionInt("Enter the value:")
+    s+="> ".repeat(a)+" \n"
 }
-else{
-    m1=b;
-     M1=a;
-}
-if(c<d)
-{
-    m2=c;
-    M2=d;
-}
-else
-{
-    m2=d;
-    M2=c;
-}
-if(m1<m2)
-{
-    if(m2>M1)
-    {
-        r=M1;
-    }
-    else{
-        r=m2;
-    }
-}
-else
-{
-    if(m1>M2)
-    {
-        r=M2;
-    }
-    else{
-        r=m1;
-    }
-}
-console.log(r)
+console.log(s)

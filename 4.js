@@ -1,10 +1,34 @@
-// Q = X + X^2/2 + X^3/3 + ...n
-const z=require("readline-sync")
-let a=z.question("Enter Value :"),s=0,n=z.question("Enter Value N :");
-for(let i=1;n>=i;i++)
-{
-    s=s+Math.floor(Math.pow(a,i)/i);
-    //console.log(s);
+//Write a program to take input n from the user and print Pascal's triangle of n rows.
+
+const input=require("readline-sync")
+let N=input.questionInt("Enter The N:")
+let i=0,A=[],a
+
+while(N>=i)
+{   A[i]=[]
     
+    let j=0,b=0;
+    while(i>=j)
+    {   
+        if(j==i||j==0)
+        {
+            A[i][j]=1;
+            j++;
+        }
+        else
+        {
+            a=A[i-1][b]+A[i-1][b+1]
+            A[i][j]=a
+            b++;
+            j++;
+        }
+    }
+    i++;
+
 }
-console.log(s)
+i=0
+while(N>=i)
+{
+    console.log(A[i]);
+    i++;
+}

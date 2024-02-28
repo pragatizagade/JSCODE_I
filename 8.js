@@ -1,20 +1,22 @@
-// Q=     1
-//        1 2 1
-   //     1 2 3 2 1
- //       1 2 3 4 3 2 1
-
- const z=require("readline-sync");
-let a=z.question("Enter the N:"),s="",b=1
-for(let i=1;a>=i;i++)
+//Write a program to take a binary array which contains 0 and 1, and print the maximum number of consecutive 1's in the array.
+const input=require("readline-sync")
+let N=input.questionInt("Enter the N:"),A=[],max=Number.MIN_VALUE,c=0;
+for(let i=0;N>i;i++)
 {
-    for(let j=1;i>=j;j++)
-    {
-        s+=j+" "
-    }
-    for(let j=i-1;j>0;j--)
-    {
-        s+=j+" "
-    }
-    s+="\n"
+    A[i]=input.questionInt("Enter the Value:")
 }
-console.log(s)
+for(let i=0;N>i;i++)
+{
+    if(A[i]==1)
+    {
+        c++;
+        if(c>max)
+        {
+            max=c;
+        }
+    }
+    else{
+        c=0
+    }
+}
+console.log(max)

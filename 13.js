@@ -1,29 +1,42 @@
-
-//N=4
-//4 5 4 3 2
-//3 4 5 4 3
-//2 3 4 5 4
-//1 2 3 4 5
-
-
-const input=require("readline-sync")
-let a=Number(input.question("Enter a:")),s="",b=a,c=a;
-for(let i=0;a>i;i++)
+//magic square
+const input = require("readline-sync")
+let N = input.questionInt("Enter the N:")
+let A = [];
+for(let i=0;N>i;i++)
 {
-    for(let j=0;a+1>j;j++)
+    A[i]=[]
+    for(let j=0;N>j;j++)
     {
-        if(i+1>j)
+        A[i][j]=0
+    }
+}
+let c=Math.floor(N/2),r=0,i=2;
+
+A[r][c]=1;
+while((N*N)>=i)
+{
+    r--
+    c++
+    if((r<0&&c>N-1)||(A[r][c]>0))
+    {
+        r+=2
+        c--
+    }
+    else
+    {
+        if(r<0)
         {
-            s+=c+j+" "
-            b=a+1
+            r=N-1
         }
-        else
+        if(c>=N)
         {
-            s+=b+" "
-            b--
+            c=0
         }
     }
-    c--
-    s+="\n"
+    A[r][c]=i
+    i++;
 }
-console.log(s)
+for(let i=0;N>i;i++)
+{
+    console.log(A[i]);
+}
